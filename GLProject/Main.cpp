@@ -376,9 +376,15 @@ int main()
 		poster.draw(ourShader);
 		ourShader.setInt("torn", 0);
 
-		float hourA = 10 * 30.0f + 10 * 0.5f; 
-		float minA = 10 * 6.0f;               
-		float secA = 30 * 6.0f;               
+
+    int clockHour = 3;    
+    int clockMinute = 45; 
+    int clockSecond = 15;  
+
+    float hourA = clockHour * 30.0f + clockMinute * 0.5f;  
+    float minA = clockMinute * 6.0f + clockSecond * 0.1f;   
+    float secA = clockSecond * 6.0f;                       
+
 
 		clockRim.transformation(translate(mat4(1.0f), clockC + vec3(0, 0, 0.01f)));
 		clockRim.draw(ourShader);
